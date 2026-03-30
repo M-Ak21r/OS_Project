@@ -27,10 +27,11 @@ Authentication service with hardcoded backdoor demonstrating process spawning an
 **Files**: `auth_service.c`, `exploit_trapdoor.py`
 **Documentation**: [PHASE2_README.md](PHASE2_README.md)
 
-### 🔜 Phase 3: Detection Engine & Dashboard (COMING NEXT)
+### ✅ Phase 3: Detection Engine & Dashboard (COMPLETED)
 Real-time security monitoring framework with rich terminal UI for detecting both vulnerabilities.
 
-**Planned**: `monitor.py` with system log analysis and process monitoring
+**Files**: `monitor.py`, `requirements.txt`
+**Documentation**: [PHASE3_README.md](PHASE3_README.md)
 
 ---
 
@@ -40,6 +41,9 @@ Real-time security monitoring framework with rich terminal UI for detecting both
 ```bash
 sudo apt-get update
 sudo apt-get install -y gcc make python3 build-essential
+
+# Install Python dependencies for Phase 3
+pip3 install -r requirements.txt
 ```
 
 ### Build All Components
@@ -79,6 +83,18 @@ python3 exploit_trapdoor.py
 ps aux | grep auth_service
 ```
 
+### Phase 3: Real-Time Monitoring
+```bash
+# Start the detection engine (recommended: run as root)
+sudo python3 monitor.py
+
+# In another terminal, trigger vulnerabilities to test:
+python3 exploit_overflow.py       # Test buffer overflow detection
+python3 exploit_trapdoor.py       # Test trapdoor detection
+
+# Watch the dashboard update in real-time!
+```
+
 ---
 
 ## 📖 Educational Value
@@ -89,8 +105,10 @@ ps aux | grep auth_service
 - Process daemonization (setsid)
 - Signal handling (SIGSEGV, SIGHUP)
 - File descriptors and I/O redirection
-- System logging and monitoring
+- System logging and monitoring (dmesg, syslog)
 - Authentication and access control
+- Process tree analysis (/proc filesystem)
+- Real-time threat detection
 
 ### Security Topics Covered
 - Memory corruption vulnerabilities
@@ -100,6 +118,8 @@ ps aux | grep auth_service
 - Detection and forensics
 - Secure coding practices
 - Defense-in-depth strategies
+- Security operations and incident response
+- Alert management and triage
 
 ---
 
@@ -123,6 +143,8 @@ ps aux | grep auth_service
 
 - **[PHASE1_README.md](PHASE1_README.md)** - Buffer overflow deep dive
 - **[PHASE2_README.md](PHASE2_README.md)** - Trapdoor/backdoor analysis
+- **[PHASE3_README.md](PHASE3_README.md)** - Detection engine & dashboard guide
+- **requirements.txt** - Python dependencies for monitoring
 - **Makefile** - Build system with detailed comments
 - **Source code** - Heavily commented with OS concepts
 
@@ -150,7 +172,9 @@ make help               # Show all commands
 4. Read PHASE2_README.md for backdoor concepts
 5. Run auth_service and activate the trapdoor
 6. Practice detection using ps, pstree, /proc
-7. Await Phase 3 for automated detection
+7. **Read PHASE3_README.md for monitoring concepts**
+8. **Run monitor.py and test detection of both vulnerabilities**
+9. **Study alert management and incident response**
 
 ### Lab Exercises
 - Modify buffer sizes and observe behavior
@@ -158,6 +182,9 @@ make help               # Show all commands
 - Change trapdoor trigger conditions
 - Practice manual process detection
 - Write custom detection scripts
+- **Extend monitor.py with custom detectors**
+- **Configure alert thresholds and sensitivity**
+- **Implement automated response actions**
 
 ---
 
@@ -167,7 +194,14 @@ make help               # Show all commands
 |-------|-----------|--------|-------|-------|
 | 1 | Buffer Overflow | ✅ Complete | 3 | ✅ Pass |
 | 2 | Trapdoor | ✅ Complete | 2 | ✅ Pass |
-| 3 | Detection Engine | 🔜 Next | 0 | - |
+| 3 | Detection Engine | ✅ Complete | 2 | ✅ Pass |
+
+**🎉 ALL PHASES COMPLETE!**
+
+This project demonstrates a complete security vulnerability lifecycle:
+- **Phase 1**: Vulnerability (buffer overflow)
+- **Phase 2**: Exploitation (trapdoor backdoor)
+- **Phase 3**: Detection & Response (monitoring framework)
 
 ---
 

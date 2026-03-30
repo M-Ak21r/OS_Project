@@ -1,0 +1,25 @@
+# Python Dependencies for Security Vulnerability Detection Framework
+#
+# Phase 3: Detection Engine & Dashboard
+# ---------------------------------------
+# These libraries are required for the monitoring daemon and terminal UI
+
+# Process monitoring and system information
+# Used to detect unauthorized processes, analyze process trees, and monitor system resources
+psutil>=5.9.0
+
+# Rich terminal UI library
+# Used to create the split-screen dashboard with real-time security alerts
+rich>=13.0.0
+
+# Installation Instructions:
+# -------------------------
+# Install all dependencies with:
+#   pip3 install -r requirements.txt
+#
+# Or install system-wide (requires sudo):
+#   sudo pip3 install -r requirements.txt
+#
+# For Ubuntu/Debian systems, you can also use:
+#   sudo apt-get install python3-psutil
+#   pip3 install rich
