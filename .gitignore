@@ -1,0 +1,29 @@
+# Compiled binaries
+buffer_target
+auth_service
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Debug files
+*.dSYM/
+*.o
+*.a
+
+# Temporary files
+/tmp/
+*.log
