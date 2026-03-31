@@ -12,6 +12,12 @@ psutil>=5.9.0
 # Used to create the split-screen dashboard with real-time security alerts
 rich>=13.0.0
 
+# Phase 4: DNS Cache Poisoning Detection
+# ---------------------------------------
+# inotify wrapper for monitoring file system events
+# Used to detect unauthorized modifications to /etc/hosts
+pyinotify>=0.9.6
+
 # Installation Instructions:
 # -------------------------
 # Install all dependencies with:
